@@ -5,15 +5,21 @@ const fetcherFunction = () => {
   return axios.get("http://localhost:4000/superheroes");
 };
 
+const onSuccess = (data) => {
+  console.log("hi i am from on sucess", data);
+};
+
+const onError = (err) => {
+  console.log("hi iam from on error ", err);
+};
+
 const RQSuperheroes = () => {
   const { data, isLoading, isError, error, refetch, isFetching } = useQuery(
     "super-heroes",
     fetcherFunction,
     {
-      //   cacheTime: 5000,
-      //   staleTime: 30000,
-      //   refetchInterval: 2000,
-      enabled: false,
+      onSuccess,
+      onError,
     }
   );
 
@@ -29,7 +35,6 @@ const RQSuperheroes = () => {
   return (
     <>
       <h2>RQSuperheroes</h2>
-      <button onClick={refetch}>Fetch My Heroes</button>
       {data?.data.map((hero) => {
         return <div key={hero.name}>{hero.name}</div>;
       })}
