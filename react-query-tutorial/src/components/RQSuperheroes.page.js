@@ -1,16 +1,17 @@
 import { useState } from "react";
 import { useSuperHeroesData } from "../hook/useSuperHeroesData";
+import { Link } from "react-router-dom";
 
 const RQSuperheroes = () => {
-  const [reFetchInterval, setreFetchInterval] = useState(2000);
+  // const [reFetchInterval, setreFetchInterval] = useState(2000);
 
   const onSuccess = (data) => {
-    setreFetchInterval(false);
+    // setreFetchInterval(false);
     console.log("hi i am from on sucess", data);
   };
 
   const onError = (err) => {
-    setreFetchInterval(false);
+    // setreFetchInterval(false);
     console.log("hi iam from on error ", err);
   };
 
@@ -30,12 +31,16 @@ const RQSuperheroes = () => {
     <>
       <h2>RQSuperheroes</h2>
       <button onClick={refetch}>Refetch Data</button>
-      {/* {data?.data.map((hero) => {
-        return <div key={hero.name}>{hero.name}</div>;
-      })} */}
-      {data.map((hero) => {
-        return <div key={hero}>{hero}</div>;
+      {data?.data.map((hero) => {
+        return (
+          <div key={hero.id}>
+            <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link>
+          </div>
+        );
       })}
+      {/* {data.map((hero) => {
+        return <div key={hero}>{hero}</div>;
+      })} */}
     </>
   );
 };
