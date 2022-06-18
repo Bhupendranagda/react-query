@@ -31,6 +31,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="super-heroes" element={<Superheroes />} />
             <Route path="rq-super-heroes" element={<RQSuperheroes />} />
+            {/* Added new route to view single super hero */}
             <Route path="/rq-super-heroes/:heroId" element={<RQSuperHero />} />
           </Routes>
         </BrowserRouter>

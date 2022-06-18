@@ -33,6 +33,7 @@ const RQSuperheroes = () => {
       <button onClick={refetch}>Refetch Data</button>
       {data?.data.map((hero) => {
         return (
+          // Added Link to the super hero name
           <div key={hero.id}>
             <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link>
           </div>
