@@ -25,5 +25,19 @@
             "name": "my HEro",
             "alterEgo": "jackie chan"
         }
+    ],
+    "friends": [
+        {
+            "id": 1,
+            "name": "Bhupendra"
+        },
+        {
+            "id": 2,
+            "name": "Amit"
+        },
+        {
+            "id": 3,
+            "name": "Akshay"
+        }
     ]
 }
