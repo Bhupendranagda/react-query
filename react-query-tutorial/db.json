@@ -39,5 +39,25 @@
             "id": 3,
             "name": "Akshay"
         }
+    ],
+    "users": [
+        {
+            "id": "honey@gmail.com",
+            "channelId": "codeEvolution"
+        },
+        {
+            "id": "sanskar@gmail.com",
+            "channelId": "CodeWithHoney"
+        }
+    ],
+    "channels": [
+        {
+            "id": "codeEvolution",
+            "courses": [
+                "react",
+                "java",
+                "html"
+            ]
+        }
     ]
 }
