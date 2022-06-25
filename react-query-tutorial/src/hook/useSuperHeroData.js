@@ -1,4 +1,4 @@
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 import axios from "axios";
 
 // this function is used to fetch data for single super hero
@@ -8,5 +8,21 @@ const fetchSuperHero = ({ queryKey }) => {
 };
 
 export const useSuperHeroData = (heroId) => {
-  return useQuery(["super-hero", heroId], fetchSuperHero);
+  // This gives us the global query client object through which we can access
+  // caches queries
+  const queryClient = useQueryClient();
+
+  return useQuery(["super-hero", heroId], fetchSuperHero, {
+    initialData: () => {
+      const hero = queryClient
+        .getQueryData("super-heroes")
+        ?.data?.find((hero) => hero.id === parseInt(heroId));
+
+      if (hero) {
+        return { data: hero };
+      } else {
+        return undefined;
+      }
+    },
+  });
 };

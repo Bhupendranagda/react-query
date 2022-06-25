@@ -59,5 +59,39 @@
                 "html"
             ]
         }
+    ],
+    "colors": [
+        {
+            "id": 1,
+            "label": "red"
+        },
+        {
+            "id": 2,
+            "label": "orange"
+        },
+        {
+            "id": 3,
+            "label": "crimson"
+        },
+        {
+            "id": 4,
+            "label": "yellow"
+        },
+        {
+            "id": 5,
+            "label": "pink"
+        },
+        {
+            "id": 6,
+            "label": "blue"
+        },
+        {
+            "id": 7,
+            "label": "Black"
+        },
+        {
+            "id": 8,
+            "label": "maroon"
+        }
     ]
 }
